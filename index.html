@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenMeal - Nourishment for Resilience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Zen Garden (Light Cream, Dark Olive, Vibrant Green) -->
+    <!-- Application Structure Plan: A single-page, product-focused website with a strong narrative. The structure is designed to answer the user's core questions: "Why does this exist?" and "What is the product?". The flow is: 1. Hero (emotional hook), 2. Our Purpose (the "why"), 3. The Solution (the "what"), 4. Who We Help (the impact), 5. Made in Ukraine (the brand's core identity), and 6. Get Involved (the call to action). This structure prioritizes the brand's story and mission over business metrics, creating a connection with customers and supporters. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Problem Statement -> Goal: Explain Purpose -> Viz: Split layout with text and impactful imagery -> Interaction: Static -> Justification: Clearly communicates the mission driving the brand.
+        - Report Info: Product Features -> Goal: Showcase the Product -> Viz: Icon-based feature list and product format cards -> Interaction: Static -> Justification: Makes product benefits easily scannable and visually appealing.
+        - Report Info: Target Customers -> Goal: Show Impact -> Viz: Cards representing different groups (IDPs, Soldiers, etc.) -> Interaction: Static -> Justification: Humanizes the brand's impact by showing who benefits.
+        - All complex charts, financial data, and business frameworks (PESTLE, Porter's, etc.) have been removed to align with a product/mission focus instead of an investor pitch.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        :root {
+            --background: #F5F3ED; /* Light Cream */
+            --text-primary: #4A573E;  /* Dark Olive */
+            --accent-primary: #98B882; /* Vibrant Green */
+            --accent-secondary: #67A0A3; /* Muted Teal */
+            --accent-neutral: #D2BBA0;  /* Sandy Beige */
+            --accent-dark: #2E6B6E;    /* Deep Teal */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent-primary);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-primary);
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .hero-section {
+            background-color: var(--accent-neutral);
+        }
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px -2px rgb(0 0 0 / 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1);
+        }
+        .btn-primary {
+            background-color: var(--accent-primary);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #86a871;
+        }
+        .text-primary { color: var(--text-primary); }
+        .bg-secondary-accent { background-color: var(--accent-secondary); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="header" class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#">
+                <img src="/zenmeal logo.bg.png" alt="ZenMeal Logo" class="h-12 md:h-16">
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium text-primary">
+                <a href="#purpose" class="nav-link">Our Purpose</a>
+                <a href="#product" class="nav-link">The Product</a>
+                <a href="#impact" class="nav-link">Our Impact</a>
+                <a href="#contact" class="nav-link">Get Involved</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-primary focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#purpose" class="block py-2 px-4 text-sm hover:bg-gray-100">Our Purpose</a>
+            <a href="#product" class="block py-2 px-4 text-sm hover:bg-gray-100">The Product</a>
+            <a href="#impact" class="block py-2 px-4 text-sm hover:bg-gray-100">Our Impact</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-100">Get Involved</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section text-center py-24 md:py-40">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-primary mb-4">Strength and Dignity in Every Meal.</h1>
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-primary/80 mb-10">A complete nutritional solution, born from crisis, to support the resilience of the Ukrainian people.</p>
+                <a href="#purpose" class="btn-primary px-8 py-3 rounded-full font-bold text-lg transition transform hover:scale-105 inline-block">Discover Our Story</a>
+            </div>
+        </section>
+
+        <section id="purpose" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="font-semibold text-primary/70">OUR PURPOSE</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary my-4">Born From Necessity, Driven By Hope</h2>
+                        <div class="space-y-4 text-primary/90">
+                            <p>Since the start of the war, daily life for millions in Ukraine has been unimaginably altered. The simple act of preparing a hot, nutritious meal has become a luxury many cannot afford. Families have been displaced, living in shelters without kitchens, stable electricity, or even clean water. In these moments, food is more than sustenance—it is survival, energy, and hope.</p>
+                            <p>Traditional food aid, while vital, is often bulky, difficult to transport, and may not provide the balanced nutrition needed to endure long-term stress. We saw a critical gap: the need for a smart, practical, and dignified nutritional solution that works in the toughest conditions. That is why we created ZenMeal.</p>
+                        </div>
+                    </div>
+                    <div class="card p-2">
+                        <img src="/uk.webp" alt="A hopeful image of a Ukrainian field" class="rounded-lg w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="product" class="py-20 md:py-28" style="background-color: #F5F3ED;">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Introducing ZenMeal</h2>
+                    <p class="max-w-2xl mx-auto text-primary/80">A complete, ready-to-use meal designed for life on the move, in shelters, or on the frontlines. It’s real food, in a smarter form.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card p-6 text-center">
+                        <div class="text-4xl mb-4" style="color: var(--accent-secondary);">●</div>
+                        <h3 class="font-bold text-lg mb-2">Nutritionally Complete</h3>
+                        <p class="text-sm text-primary/80">Each serving provides 400-500 calories with a perfect balance of protein, healthy fats, fiber, and over 25 essential vitamins and minerals.</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                        <div class="text-4xl mb-4" style="color: var(--accent-secondary);">●</div>
+                        <h3 class="font-bold text-lg mb-2">Crisis-Ready</h3>
+                        <p class="text-sm text-primary/80">With a shelf-life of up to 12 months, our meals require no cooking, refrigeration, or special preparation. Just open and consume.</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                         <div class="text-4xl mb-4" style="color: var(--accent-secondary);">●</div>
+                        <h3 class="font-bold text-lg mb-2">Locally Inspired</h3>
+                        <p class="text-sm text-primary/80">We use familiar Ukrainian flavors like honey-oats, vanilla buckwheat, and berry blends to provide comfort when it's needed most.</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                         <div class="text-4xl mb-4" style="color: var(--accent-secondary);">●</div>
+                        <h3 class="font-bold text-lg mb-2">Adaptable Formats</h3>
+                        <p class="text-sm text-primary/80">Available as a ready-to-drink bottle for immediate use or as a lightweight powder sachet to be mixed with water.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Who We Help & How</h2>
+                    <p class="max-w-3xl mx-auto text-primary/80">Our mission is to support every part of our community. By choosing ZenMeal, you are not just buying a product; you are contributing to a nationwide effort of recovery and resilience.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-8">
+                        <h3 class="text-xl font-bold mb-3">Displaced Families & Individuals</h3>
+                        <p class="text-primary/90">We provide a reliable source of nutrition for those in shelters or temporary housing, ensuring children and adults receive the vital nutrients they need without a kitchen.</p>
+                    </div>
+                    <div class="card p-8">
+                        <h3 class="text-xl font-bold mb-3">Soldiers & Frontline Workers</h3>
+                        <p class="text-primary/90">Our lightweight, high-energy meals are perfect for soldiers, medics, and volunteers who need portable nutrition to stay strong and focused during long hours.</p>
+                    </div>
+                    <div class="card p-8">
+                        <h3 class="text-xl font-bold mb-3">Supporting the Ukrainian Economy</h3>
+                        <p class="text-primary/90">We are proudly "Made in Ukraine." By sourcing our ingredients like oats and sunflower oil from local farms, we support Ukrainian agriculture and create jobs for displaced workers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="py-20 md:py-28 bg-secondary-accent text-white">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Involved. Support Our Mission.</h2>
+                 <p class="max-w-2xl mx-auto opacity-90 mb-10">Whether you are an NGO looking for a reliable nutrition partner, a business wanting to support the frontline, or an individual who needs a healthy meal solution, we are here to help.</p>
+                 <div class="bg-white/10 rounded-2xl p-8 md:p-12 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-6">Contact Us</h3>
+                    <div class="space-y-4">
+                        <p><strong>For Aid & NGO Partnerships:</strong> partnerships@zenmeal.ua</p>
+                        <p><strong>For Bulk & Corporate Orders:</strong> sales@zenmeal.ua</p>
+                        <p><strong>For General Inquiries:</strong> info@zenmeal.ua</p>
+                    </div>
+                    <a href="#" class="mt-8 inline-block btn-primary text-white w-full max-w-xs px-8 py-3 rounded-full font-bold text-lg transition transform hover:scale-105">Send Us a Message</a>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background-color: var(--accent-neutral);">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <a href="#">
+                 <img src="/zenmeal logo.bg.png" alt="ZenMeal Logo" class="h-16 mx-auto">
+            </a>
+            <p class="mt-2 text-primary/80">Nourishing Resilience. Rebuilding Ukraine.</p>
+            <p class="mt-4 text-primary/60 text-sm">© 2025 ZenMeal (Team 29). A mission-driven initiative.</p>
+        </div>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('main section');
+        const header = document.getElementById('header');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: `-${header.offsetHeight}px 0px 0px 0px`,
+            threshold: 0.4
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        sections.forEach(section => {
+            if (section.id) {
+                observer.observe(section);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
